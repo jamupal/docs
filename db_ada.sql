@@ -1,9 +1,6 @@
-
-CREATE DATABASE db_ada;
+CREATE DATABASE db_ada ;
 
 USE db_ada;
-
-/*Table structure for table ada_flight */
 
 DROP TABLE IF EXISTS ada_flight;
 
@@ -21,7 +18,12 @@ CREATE TABLE ada_flight (
   KEY person (cd_person),
   CONSTRAINT person FOREIGN KEY (cd_person) REFERENCES ada_person (nm_id) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT plane FOREIGN KEY (cd_plane) REFERENCES ada_plane (nm_id) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table ada_flight */
+
+insert  into ada_flight(nm_id,cd_person,cd_plane,origin city,destination city,departure_time,arrival_time,date_update) values 
+(1,1,1,'Bogota','Medellín','2020-04-15 17:23:34','2020-04-15 18:23:41','2020-04-15 17:24:04');
 
 /*Table structure for table ada_person */
 
@@ -37,7 +39,12 @@ CREATE TABLE ada_person (
   birthdate date DEFAULT NULL,
   date_update date DEFAULT NULL,
   PRIMARY KEY (nm_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table ada_person */
+
+insert  into ada_person(nm_id,document,name,last_name,email,gender,birthdate,date_update) values 
+(1,'11111','Hamilton','Murillo Murillo','hamilton.yopmail.com','male','1981-12-14','2020-04-15');
 
 /*Table structure for table ada_plane */
 
@@ -51,5 +58,10 @@ CREATE TABLE ada_plane (
   state varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   date_update datetime DEFAULT NULL,
   PRIMARY KEY (nm_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table ada_plane */
+
+insert  into ada_plane(nm_id,name,capacity,model,state,date_update) values 
+(1,'Airbus',200,'2009','Active','2020-04-15 17:22:27');
 
