@@ -8,8 +8,8 @@ CREATE TABLE ada_flight (
   nm_id int(11) NOT NULL AUTO_INCREMENT,
   cd_person int(11) DEFAULT NULL,
   cd_plane int(11) DEFAULT NULL,
-  origin city varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  destination city varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  origin_city varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  destination_city varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   departure_time datetime DEFAULT NULL,
   arrival_time datetime DEFAULT NULL,
   date_update datetime DEFAULT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE ada_flight (
 
 /*Data for the table ada_flight */
 
-insert  into ada_flight(nm_id,cd_person,cd_plane,origin city,destination city,departure_time,arrival_time,date_update) values 
+insert  into ada_flight(nm_id,cd_person,cd_plane,origin_city,destination_city,departure_time,arrival_time,date_update) values 
 (1,1,1,'Bogota','Medellín','2020-04-15 17:23:34','2020-04-15 18:23:41','2020-04-15 17:24:04');
 
 /*Table structure for table ada_person */
